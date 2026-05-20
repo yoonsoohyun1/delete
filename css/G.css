@@ -147,6 +147,12 @@
     font-size: 11px;
   }
 }
+
+.change-carousel:hover .change-track,
+.change-track:hover {
+  animation-play-state: paused !important;
+}
+
 /* ===============================
    Process Section
    Timeline UI
