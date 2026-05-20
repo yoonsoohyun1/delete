@@ -1,20 +1,152 @@
 /* ===============================
-   Custom Bootstrap Spacing Utility
+   실제 변화 / Endless Carousel
 ================================ */
-@media (min-width: 768px) {
-  .py-md-6 {
-    padding-top: 110px !important;
-    padding-bottom: 110px !important;
+
+.real-change-section {
+  background: var(--color-white, #fff);
+}
+
+.real-change-section .section-label {
+  color: var(--color-primary, #2478ff);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.real-change-section .section-title {
+  color: var(--color-text-dark, #111);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* 바깥 영역 */
+.change-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 움직이는 트랙 */
+.change-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 14px;
+  width: max-content;
+  animation: changeMarquee 18s linear infinite !important;
+  will-change: transform;
+}
+
+.change-carousel:hover .change-track {
+  animation-play-state: paused;
+}
+
+/* 카드 */
+.change-card {
+  flex: 0 0 190px;
+  height: 248px;
+  padding: 18px 14px 16px;
+  border-radius: 14px;
+  background: var(--color-bg-light, #eaf2ff);
+  text-align: center;
+
+  display: grid;
+  grid-template-rows: 30px 1fr 38px 22px;
+  align-items: center;
+}
+
+/* 따옴표는 항상 같은 위치 */
+.quote-mark {
+  grid-row: 1;
+  height: 30px;
+  color: var(--color-primary, #2478ff);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* 후기 문장 18px 유지 + 중앙 정렬 */
+.change-message {
+  grid-row: 2;
+  margin: 0;
+  color: var(--color-text-gray, #666);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  word-break: keep-all;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 프로필 이미지는 항상 아래 고정 */
+.change-avatar {
+  grid-row: 3;
+  display: block;
+  width: 34px;
+  height: 34px;
+  margin: 0 auto;
+  border: 1px solid var(--color-primary-light, #b9d7ff);
+  border-radius: 50%;
+  background: var(--color-white, #fff);
+  object-fit: cover;
+}
+
+/* 이름 + 직업도 항상 맨 아래 고정 */
+.change-user {
+  grid-row: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
+}
+
+.change-name {
+  color: var(--color-text-dark, #111);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.change-job {
+  color: var(--color-primary, #2478ff);
+  font-size: 12px;
+  font-weight: 600;
+}
+/* 무한 슬라이드 */
+@keyframes changeMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
-@media (min-width: 992px) {
-  .py-lg-7 {
-    padding-top: 150px !important;
-    padding-bottom: 150px !important;
+/* 모바일 */
+@media (max-width: 575px) {
+  .real-change-section .section-label {
+    font-size: 1.25rem;
+  }
+
+  .change-card {
+    flex: 0 0 150px;
+    height: 208px;
+    padding: 14px 10px 12px;
+  }
+
+  .change-message {
+    font-size: 12px;
+  }
+
+  .change-name {
+    font-size: 12px;
+  }
+
+  .change-job {
+    font-size: 11px;
   }
 }
-
 /* ===============================
    Process Section
    Timeline UI
@@ -54,7 +186,7 @@
 }
 
 .process-title {
-  font-size: 48px;
+  font-size: 30px;
   font-weight: 800;
   line-height: 1.2;
   color: var(--color-primary);
