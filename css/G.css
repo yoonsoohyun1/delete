@@ -1,4 +1,499 @@
 /* ===============================
+   Custom Bootstrap Spacing Utility
+================================ */
+@media (min-width: 768px) {
+  .py-md-6 {
+    padding-top: 110px !important;
+    padding-bottom: 110px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .py-lg-7 {
+    padding-top: 150px !important;
+    padding-bottom: 150px !important;
+  }
+}
+
+/* ===============================
+   Process Section
+   Timeline UI
+   slide-up 제거 완료
+================================ */
+
+
+.process-section {
+  position: relative;
+  
+}
+
+.process-head {
+  position: relative;
+}
+
+.process-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background-color: var(--color-primary-08);
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.process-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-mint);
+  box-shadow: 0 0 0 6px var(--color-mint-16);
+}
+
+.process-title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+.process-subtitle {
+  max-width: 520px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--color-text-main);
+}
+
+/* Hero motion visual */
+.process-hero-motion {
+  position: relative;
+  width: min(100%, 420px);
+  height: 280px;
+}
+
+.process-hero-orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-blue-soft);
+  animation: processOrbit 8s linear infinite;
+}
+
+.process-hero-orbit-01 {
+  inset: 24px 42px 28px;
+}
+
+.process-hero-orbit-02 {
+  inset: 58px 84px 70px;
+  animation-duration: 6s;
+  animation-direction: reverse;
+}
+
+.process-hero-card {
+  position: absolute;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-blue-strong);
+  box-shadow: var(--shadow-hero-card);
+}
+
+.process-hero-card-main {
+  left: 50%;
+  top: 50%;
+  width: 210px;
+  height: 168px;
+  padding: 18px;
+  border-radius: 28px;
+  transform: translate(-50%, -50%);
+  animation: processMainFloat 3.5s ease-in-out infinite;
+}
+
+.process-hero-card-top {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.process-hero-card-top span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--color-blue-line);
+}
+
+.process-hero-check {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: var(--gradient-hero-check);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.process-hero-line {
+  height: 8px;
+  margin: 9px auto 0;
+  border-radius: 999px;
+  background-color: var(--color-blue-line-soft);
+}
+
+.process-hero-line-lg {
+  width: 128px;
+}
+
+.process-hero-line-md {
+  width: 96px;
+}
+
+.process-hero-line-sm {
+  width: 68px;
+}
+
+.process-hero-card-sub {
+  min-width: 122px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.process-hero-card-sub strong {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--color-blue-soft);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.process-hero-card-sub span {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--color-text-main);
+  white-space: nowrap;
+}
+
+.process-hero-card-left {
+  left: 10px;
+  bottom: 40px;
+  animation: processFloat 4s ease-in-out infinite 0.35s;
+}
+
+.process-hero-card-right {
+  right: 4px;
+  top: 34px;
+  animation: processFloat 4.2s ease-in-out infinite 0.65s;
+}
+
+.process-hero-dot {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--color-mint);
+  box-shadow: 0 10px 22px var(--color-mint-22);
+  animation: processPulse 2.4s ease-in-out infinite;
+}
+
+.process-hero-dot-01 {
+  width: 14px;
+  height: 14px;
+  left: 72px;
+  top: 42px;
+}
+
+.process-hero-dot-02 {
+  width: 18px;
+  height: 18px;
+  right: 78px;
+  bottom: 42px;
+  animation-delay: 0.45s;
+}
+
+.process-hero-dot-03 {
+  width: 10px;
+  height: 10px;
+  right: 28px;
+  bottom: 108px;
+  animation-delay: 0.8s;
+}
+
+/* Timeline */
+.process-timeline {
+  position: relative;
+  padding-top: 26px;
+}
+
+.process-timeline-line {
+  position: absolute;
+  top: 66px;
+  left: 16.666%;
+  right: 16.666%;
+  height: 3px;
+  border-radius: 999px;
+  background-color: var(--color-border-blue-light);
+  overflow: hidden;
+  z-index: 0;
+}
+
+.process-timeline-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border-radius: inherit;
+  background: var(--gradient-primary-mint);
+}
+
+.process-step {
+  position: relative;
+  z-index: 1;
+}
+
+.process-number {
+  position: relative;
+  z-index: 2;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: 3px solid var(--color-primary);
+  box-shadow: var(--shadow-process-number);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-primary-sub);
+}
+
+.process-number::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -70px;
+  width: 2px;
+  height: 54px;
+  background-image: linear-gradient(var(--color-primary) 55%, transparent 0%);
+  background-position: right;
+  background-size: 2px 10px;
+  background-repeat: repeat-y;
+  transform: translateX(-50%);
+}
+
+.process-icon {
+  width: 118px;
+  height: 118px;
+  margin-top: 76px;
+  border-radius: 50%;
+  background-color: var(--color-blue-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 10px var(--color-white-55);
+}
+
+.process-icon-img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+}
+.process-card {
+  margin-top: 30px;
+  min-height: 280px;
+  padding: 46px 32px 38px;
+  border-radius: 28px;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-blue);
+}
+
+.process-card-title {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--color-primary);
+  margin-bottom: 18px;
+}
+
+.process-card-bar {
+  display: inline-block;
+  width: 52px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--gradient-primary-mint);
+  margin-bottom: 22px;
+}
+
+.process-card-desc {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.85;
+  color: var(--color-text-muted);
+}
+
+.process-card,
+.process-icon,
+.process-number {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:hover .process-card {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-process-hover);
+}
+
+.process-step:hover .process-icon {
+  transform: translateY(-5px);
+}
+
+.process-step:hover .process-number {
+  transform: translateY(-4px);
+}
+
+@keyframes processFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes processMainFloat {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
+}
+
+@keyframes processOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes processPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.72;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+}
+
+/* ===============================
+   Process Scroll Repeat Animation
+================================ */
+
+/* JS가 정상 연결됐을 때만 처음에 숨김 */
+body.motion-ready .process-kicker,
+body.motion-ready .process-title,
+body.motion-ready .process-subtitle,
+body.motion-ready .process-hero-motion,
+body.motion-ready .process-step {
+  opacity: 0;
+  transform: translateY(38px);
+}
+
+/* 화면에 들어왔을 때 실행 */
+body.motion-ready .process-section.is-motion .process-kicker,
+body.motion-ready .process-section.is-motion .process-title,
+body.motion-ready .process-section.is-motion .process-subtitle,
+body.motion-ready .process-section.is-motion .process-hero-motion,
+body.motion-ready .process-section.is-motion .process-step {
+  animation-name: processSlideUp;
+  animation-duration: 0.75s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: forwards;
+}
+
+/* 순차 등장 */
+body.motion-ready .process-section.is-motion .process-kicker {
+  animation-delay: 0.05s;
+}
+
+body.motion-ready .process-section.is-motion .process-title {
+  animation-delay: 0.16s;
+}
+
+body.motion-ready .process-section.is-motion .process-subtitle {
+  animation-delay: 0.27s;
+}
+
+body.motion-ready .process-section.is-motion .process-step:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+body.motion-ready .process-section.is-motion .process-step:nth-child(2) {
+  animation-delay: 0.55s;
+}
+
+body.motion-ready .process-section.is-motion .process-step:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+/* 타임라인 선 기본 상태 */
+.process-timeline-line::after {
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+/* 화면에 들어왔을 때 타임라인 선 실행 */
+body.motion-ready .process-section.is-motion .process-timeline-line::after {
+  animation: processLineFill 1.1s ease forwards;
+  animation-delay: 0.55s;
+}
+
+/* Slide-up */
+@keyframes processSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(38px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Timeline line */
+@keyframes processLineFill {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* ===============================
    FAQ Section
 ================================ */
 .faq-section {

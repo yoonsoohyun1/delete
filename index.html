@@ -103,13 +103,108 @@
 
     </section>
 
+<!-- id=PROCESS 기령 -->
+<section id="process" class="process-section py-5 py-md-6 py-lg-7">
+  <div class="container">
+
+    <div class="process-head text-start mb-4 mb-lg-5">
+      <h2 class="process-title mb-3">과정</h2>
+      <p class="process-subtitle mb-0">
+        세 가지 단계로 안내받으세요
+      </p>
+    </div>
+
+    <!-- Timeline UI -->
+    <div class="process-timeline position-relative">
+      <div class="process-timeline-line d-none d-lg-block"></div>
+
+      <div class="row g-4 g-lg-5">
+
+        <!-- Step 1 -->
+        <div class="col-lg-4">
+          <article class="process-step text-center">
+            <div class="process-number mx-auto">01</div>
+
+            <div class="process-icon mx-auto d-flex align-items-center justify-content-center">
+              <img 
+                src="./img/Process/process-check.svg" 
+                alt="자격 확인 아이콘" 
+                class="process-icon-img img-fluid"
+              >
+            </div>
+
+            <div class="process-card">
+              <h3 class="process-card-title">자격 확인</h3>
+              <span class="process-card-bar"></span>
+              <p class="process-card-desc mb-0">
+                간단한 질문을 통해<br>
+                지원 가능 여부를 빠르게 확인합니다.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-lg-4">
+          <article class="process-step text-center">
+            <div class="process-number mx-auto">02</div>
+
+            <div class="process-icon mx-auto d-flex align-items-center justify-content-center">
+              <img 
+                src="./img/Process/process-connect.svg" 
+                alt="담당 기관 연결 아이콘" 
+                class="process-icon-img img-fluid"
+              >
+            </div>
+
+            <div class="process-card">
+              <h3 class="process-card-title">담당 기관 연결</h3>
+              <span class="process-card-bar"></span>
+              <p class="process-card-desc mb-0">
+                조건에 맞는 담당 기관과<br>
+                신청 경로를 안내해드립니다.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-lg-4">
+          <article class="process-step text-center">
+            <div class="process-number mx-auto">03</div>
+
+            <div class="process-icon mx-auto d-flex align-items-center justify-content-center">
+              <img 
+                src="./img/Process/process-result.svg"
+                alt="결과 받기 아이콘" 
+                class="process-icon-img img-fluid"
+              >
+            </div>
+
+            <div class="process-card">
+              <h3 class="process-card-title">결과 받기</h3>
+              <span class="process-card-bar"></span>
+              <p class="process-card-desc mb-0">
+                신청 진행 후 결과와<br>
+                다음 절차를 확인할 수 있습니다.
+              </p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- id=FAQ 기령 -->
 <section id="faq" class="faq-section py-5">
   <div class="container">
 
     <div class="faq-head text-left mb-4 mb-lg-5">
-      <h2 class="faq-title px-2 mb-0mb-0">FAQ</h2>
+      <h2 class="faq-title px-2 mb-0">FAQ</h2>
     </div>
 
     <div class="row row-cols-1 row-cols-lg-2 gx-2 gy-2 gx-lg-3 gy-lg-3 justify-content-center align-items-start">
@@ -245,8 +340,9 @@
               placeholder="이메일을 입력하세요"
             >
             <button type="submit" class="ft-subscribe-btn d-inline-flex align-items-center justify-content-center lh-1">
-            구독하기
+              구독하기
             </button>
+            </form>
         </div>
 
       </div>
@@ -322,5 +418,6 @@
     <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/g.js"></script>
 </body>
 </html>
