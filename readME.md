@@ -61,6 +61,7 @@
 | `test` | 테스트 코드 추가/수정 | test: 로그인 테스트 추가 |
 | `chore` | 설정/패키지/빌드 작업 | chore: bootstrap 업데이트 |
 | `init` | 초기 프로젝트 설정 | init: 프로젝트 초기 세팅 |
+| `merge` | 공동 작업 병합 | merge: Gbranch -> main으로 병합 |
 
 ---
 
