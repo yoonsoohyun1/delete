@@ -4,7 +4,7 @@
 
 /* 공지 */
 #hd .notification-banner {
-    background-color: var(--p-sub-color); /* 원본 이미지의 파스텔 블루 컬러 */
+    background-color: var(--color-top-banner); 
     font-size: 23px;
     letter-spacing: -0.5px;
 }
@@ -35,7 +35,7 @@
 }
 
 #hd .main-menu ul li a:hover {
-    color: var(--p-main-color); 
+    color: var(--color-primary); 
 }
 
 /* (옵션)자바스크립트랑 연동된 스크롤 하버스타일 */
@@ -69,7 +69,7 @@
 }
 
 .hero-highlight-text {
-    color: var(--p-main-color);
+    color: var(--color-primary);
 }
 
 /* 버튼 */
@@ -88,13 +88,13 @@
 
 
 .hero-btn-wrap .btn-outline {
-    border: 3px solid var(--p-main-color);
-    color: var(--p-main-color);
+    border: 3px solid var(--color-primary);
+    color: var(--color-primary);
     background-color: transparent;
 }
 .hero-btn-wrap .btn-outline:hover {
-    border: 3px solid var(--p-main-color);
-    color: var(--p-main-color);
+    border: 3px solid var(--color-primary);
+    color: var(--color-primary);
     background-color: transparent;
 }
 
@@ -155,4 +155,61 @@
         opacity: 1;
         transform: translateY(0); 
     }
+}
+
+/* ==========================================================================
+   현실 섹션
+   ========================================================================== */
+
+#real {
+    background-color: var(--color-bg-light);
+}
+
+/* 카드 크기 */
+#real .reality-card {
+    border-radius: 30px;
+    padding: 25px 15px; /* 카드 내부 좌우 여백 */
+}
+
+/* 아이콘 크기 */
+#real .reality-card img {
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+    margin-right: 20px; /* 아이콘과 텍스트 사이 간격 */
+}
+
+
+/* 카드 타이틀 */
+#real .card-stat {
+    font-size: 30px;         
+    color: var(--color-primary);          
+    font-weight: 500;        
+    margin-bottom: 10px;      
+    line-height: 1.2;
+}
+
+/* 카드 설명 글 */
+#real .card-desc {
+    font-size: 20px;          /* 폰트 크기 */
+    color: var(--color-text-main);           /* 폰트 색상 */
+    font-weight: 400;         /* 폰트 굵기 */
+    line-height: 1.2;         /* 행간 */
+    margin-bottom: 0;         /* 부트스트랩 기본 p태그 마진 리셋 */
+}
+
+
+/* 현실섹션 반응형 모바일 브레이크 포인트 (가로폭 좁은 화면 대응) */
+   
+@media (max-width: 1400px) {
+    #real { padding-left: 80px !important; padding-right: 80px !important; }
+}
+
+@media (max-width: 1199px) {
+    /* 화면이 아주 작아질 때 카드가 삐져나가지 않도록 유연하게 리셋 */
+    #real .reality-card { width: 100%; max-width: 444px; }
+}
+
+@media (max-width: 768px) {
+    #real { padding-left: 24px !important; padding-right: 24px !important; }
 }
