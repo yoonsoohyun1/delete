@@ -149,6 +149,129 @@
     </section>
 
 
+    <!-- 차트섹션 -->
+    <section id="chart" class="py-5">
+        <div class="container py-4">
+        
+                <div class="d-flex flex-wrap gap-3 mb-5 filter-wrapper">
+                    <div class="filter-box bg-white px-3 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2">
+                        <span class="map-icon">
+                            <img src="./img/Chart_Section/Map_Ico.svg" alt="지도아이콘">
+                        </span>
+                        <span class="filter-label me-1">지역:</span>
+                        <span class="filter-value">서울특별시</span>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-white filter-box bg-white px-3 py-2 rounded-pill shadow-sm dropdown-toggle" type="button" id="guDropdown" data-bs-toggle="dropdown" data-bs-offset="0,12" aria-expanded="false">
+                            구 선택: <span id="selected-gu">강남구</span>
+                        </button>
+                        <div class="dropdown-menu p-3 shadow border-0 rounded-4" aria-labelledby="guDropdown" style="min-width: 550px;">
+                                <div class="row row-cols-5 g-2 m-0" id="gu-list">
+                                    <div class="col"><button type="button" class="dropdown-item text-center rounded-2 active" onclick="selectGu('전체')">전체</button></div>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-white filter-box bg-white px-3 py-2 rounded-pill shadow-sm dropdown-toggle" type="button" id="statusDropdown" data-bs-toggle="dropdown" data-bs-offset="0,12" aria-expanded="false" data-bs-auto-close="outside">
+                            상태: <span id="selected-status">전체</span>
+                        </button>
+                        <div class="dropdown-menu p-3 shadow border-0 rounded-4" aria-labelledby="statusDropdown" style="min-width: 220px;">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input status-checkbox" type="checkbox" value="대학(원)생" id="chk-univ" checked onchange="updateStatusFilter()">
+                                    <label class="form-check-label" for="chk-univ">대학(원)생</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input status-checkbox" type="checkbox" value="취업 준비 중" id="chk-ready" checked onchange="updateStatusFilter()">
+                                    <label class="form-check-label" for="chk-ready">취업 준비 중</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input status-checkbox" type="checkbox" value="아르바이트/프리랜서" id="chk-alba" checked onchange="updateStatusFilter()">
+                                    <label class="form-check-label" for="chk-alba">아르바이트/프리랜서</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input status-checkbox" type="checkbox" value="재직 중" id="chk-work" checked onchange="updateStatusFilter()">
+                                    <label class="form-check-label" for="chk-work">재직 중</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input status-checkbox" type="checkbox" value="무직" id="chk-none" checked onchange="updateStatusFilter()">
+                                    <label class="form-check-label" for="chk-none">무직</label>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-white filter-box bg-white px-3 py-2 rounded-pill shadow-sm dropdown-toggle" type="button" id="periodDropdown" data-bs-toggle="dropdown" data-bs-offset="0,12" aria-expanded="false">
+                            기간: <span id="selected-period">최근 3개월</span>
+                        </button>
+                        <ul class="dropdown-menu p-2 shadow border-0 rounded-4" aria-labelledby="periodDropdown">
+                            <li><button type="button" class="dropdown-item active mb-1 rounded-2" onclick="selectPeriod('최근 3개월')">최근 3개월</button></li>
+                            <li><button type="button" class="dropdown-item mb-1 rounded-2" onclick="selectPeriod('최근 6개월')">최근 6개월</button></li>
+                            <li><button type="button" class="dropdown-item rounded-2" onclick="selectPeriod('1년 내외')">1년 내외</button></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row align-items-center mb-5 content-row">
+                    <div class="col-lg-5 text-start pe-lg-5">
+                        <h2 class="sub-title section-title fw-bold mb-4">한눈에 보는<br>지역별 지원 현황</h2>
+                        <p class="sub-title-body lh-base">
+                            실시간으로 집계된 데이터를 통해 청년<br>
+                            월세 지원 사업의 투명한 운영 결과와<br>
+                            수혜 지표를 확인하실 수 있습니다.
+                        </p>
+                    </div>
+        
+                    <div class="col-lg-7 d-flex justify-content-center justify-content-lg-end">
+                        <div class="chart-panel p-4 rounded-4 shadow-sm d-flex justify-content-center align-items-center position-relative">
+                            <svg class="donut-chart" viewBox="0 0 500 500">
+                                <circle cx="250" cy="250" r="80" fill="#ffffff" />
+                                <g id="donut-segments"></g>
+                            </svg>
+                            <div id="chart-labels" class="position-absolute w-100 h-100 top-0 start-0 pointer-events-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row text-center border-top pt-4 metric-row g-3 mx-auto" style="max-width: 850px;">
+  
+                    <div class="col-md-4 metric-col position-relative">
+                        <span class="metric-title d-block mb-2">2026년 기준 누적 신청자 수</span>
+                            <div class="d-flex align-items-center justify-content-center gap-2">
+                                <span>
+                                    <img src="./img/Chart_Section/Peoples_Ico.svg" alt="누적 신청자">
+                                </span>
+                                <span class="metric-value fw-bold counter" data-target="3923" data-suffix="+">1</span>
+                            </div>
+                    </div>
+
+                    <div class="col-md-4 metric-col position-relative">
+                        <span class="metric-title d-block mb-2">지역 신청자 수</span>
+                        <div class="d-flex align-items-center justify-content-center gap-2">
+                            <span>
+                                <img src="./img/Chart_Section/People1_Ico.svg" alt="지역 신청자">
+                            </span>
+                            <span class="metric-value fw-bold counter" data-target="1124" data-suffix="명">1</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 metric-col">
+                        <span class="metric-title d-block mb-2">누적 지원 금액</span>
+                        <div class="d-flex align-items-center justify-content-center gap-2">
+                            <span>
+                                <img src="./img/Chart_Section/Money_Ico.svg" alt="누적 지원 금액">
+                            </span>
+                            <span class="metric-value fw-bold counter" data-target="3923" data-suffix="억+">1</span>
+                        </div>
+                    </div>
+
+                </div>
+
+        </div>
+    </section>
+    
+
     <!-- 플러그인(js 연결)  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
