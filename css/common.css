@@ -3,11 +3,25 @@
 
 
 body {
-    font-family: var(--p-main-font), sans-serif;
+    font-family: var(--p-main-font), sans-serif !important;
+    letter-spacing: -0.0085em;
+}
+div, ul, li, p, dl, dt, dd, h1, h2, h3, h4, h5, h6 {
+    margin:0;
+    padding:0;
+}
+.projectfont {
+    font-family: var(--p-main-font), sans-serif !important;
 }
 
 .main-bg {
-    background-color: var(--color-bg-light);
+    background-color: var(--color-bg-light) !important;
+}
+.text-primary{
+    color:var(--color-primary) !important;
+}
+.text-gray{
+    color:var(--color-text-faq) !important;
 }
 
 

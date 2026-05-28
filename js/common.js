@@ -1,3 +1,5 @@
+
+
 /* ==========================================================================
    Header Scroll
    ========================================================================== */
@@ -51,6 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
   refreshDataView();
   initChartScrollReplay();
   initCounterAnimation();
+
+  
+const darkmodeBtn = document.getElementById('darkmodebtn');
+  darkmodeBtn.addEventListener('click', function () {
+    document.body.classList.toggle('darkmode');
+    if (document.body.classList.contains('darkmode')) {
+      darkmodeBtn.innerText = 'Light Mode';
+    } else {
+      darkmodeBtn.innerText = 'Dark Mode';
+    }
+
+  });
+
+
+  
 });
 
 

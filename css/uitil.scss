@@ -15,3 +15,21 @@
     line-height: $value !important;
   }
 }
+
+@for $i from 11 through 60 {
+  .fs-#{$i} {
+    font-size: #{$i}px !important;
+
+    @media (max-width: 991px) {
+      font-size: #{$i * 0.9}px !important;
+    }
+
+    @media (max-width: 767px) {
+      font-size: #{$i * 0.8}px !important;
+    }
+
+    @media (max-width: 575px) {
+      font-size: #{$i * 0.7}px !important;
+    }
+  }
+}

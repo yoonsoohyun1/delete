@@ -2,33 +2,55 @@
 /* ==========================================================================
    상단배너
    ========================================================================== */
-body.darkmode #hd {
-  background-color: #212529 !important;
+body.darkmode {
+  background-color: #5270A4 !important;
+  color: white !important;
 }
 body.darkmode #hd a {
   color: white;
 }
-body.darkmode #hd .logo .lightlogo {
-  display: none;
+body.darkmode #hd .notification-banner {
+  background-color: #637A9F;
 }
-body.darkmode #hd .logo .darklogo {
-  display: block;
+body.darkmode #hd .logo-img {
+  color: white;
+}
+body.darkmode #hd .top-menu .text-gray {
+  color: white !important;
+}
+body.darkmode #hd .top-menu .divider {
+  background-color: rgba(255, 255, 255, 0.3764705882);
+}
+body.darkmode #hd .main-menu ul li a {
+  color: #ffffff;
+}
+body.darkmode #hd .main-menu ul li a:hover {
+  color: #ffffff;
 }
 body #hd {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, top 0.3s ease;
+}
+body #hd.bg-white {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid #f0f0f0;
+  top: -37px;
+}
+body #hd.bg-white .logo-img {
+  width: clamp(30px, 14vw, 60px);
+}
+body #hd.bg-white {
+  /* 메인 네비게이션 */
+}
+body #hd.bg-white .main-menu ul li a {
+  font-size: clamp(16px, 2.5vw, 19px) !important;
 }
 body #hd .lightlogo {
   display: block;
 }
 body #hd .darklogo {
   display: none;
-}
-body #hd {
-  /* 스크롤시 */
-}
-body #hd.bg-white {
-  background-color: #ffffff !important;
-  border-bottom: 1px solid #f0f0f0;
 }
 body #hd {
   /* 공지 배너 */
@@ -38,27 +60,29 @@ body #hd .notification-banner {
   letter-spacing: -0.5px;
 }
 body #hd .notice-text {
-  font-size: 23px;
+  font-size: clamp(14px, 2.5vw, 18px);
 }
 body #hd {
   /* 로고 */
 }
 body #hd .logo-img {
-  width: 120px;
-  height: auto;
-  display: block;
+  width: clamp(60px, 14vw, 90px);
+  transition: width 0.3s ease;
+  aspect-ratio: 90/73;
+  color: #1F68B2;
 }
 body #hd {
   /* 탑 메뉴 */
 }
 body #hd .top-menu {
   color: #827D7D;
-  font-size: 18px;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 body #hd .top-menu .divider {
-  background-color: #827D7D;
+  background-color: rgba(130, 125, 125, 0.3764705882);
   width: 1px;
-  height: 14px;
+  height: 10px;
 }
 body #hd .top-menu .menu-item {
   cursor: pointer;
@@ -90,9 +114,9 @@ body #hd {
 body #hd .main-menu ul li a {
   color: #1A1A1A;
   text-decoration: none;
-  font-size: 23px;
+  font-size: clamp(16px, 2.5vw, 23px) !important;
   letter-spacing: -0.5px;
-  transition: color 0.2s ease;
+  transition: 0.2s ease;
   white-space: nowrap;
 }
 body #hd .main-menu ul li a:hover {
@@ -145,51 +169,12 @@ body {
   /* ==========================================================================
      반응형
      ========================================================================== */
-}
-@media (max-width: 1399.98px) {
-  body #hd .notice-text {
-    font-size: 20px;
-  }
-  body #hd .logo-img {
-    width: 110px;
-  }
-  body #hd .main-menu ul li a {
-    font-size: 20px;
-  }
-}
-@media (max-width: 1199.98px) {
-  body #hd .notice-text {
-    font-size: 17px;
-  }
-  body #hd .logo-img {
-    width: 95px;
-  }
-  body #hd .top-menu {
-    font-size: 16px;
-  }
-  body #hd .main-menu ul li a {
-    font-size: 18px;
-  }
-}
-@media (max-width: 991.98px) {
-  body #hd .notice-text {
-    font-size: 14px;
-  }
-  body #hd .logo-img {
-    width: 80px;
-  }
-}
-body {
   /* ==========================================================================
      히어로 섹션
      ========================================================================== */
 }
 body #hero-section {
-  width: 100%;
-  height: 820px;
-  position: relative;
-  margin-top: 130px;
-  overflow: hidden;
+  margin-top: calc(15vh + 5rem);
   /* 배경 이미지 */
   background-image: url("/img/Hero_Section/Background.png");
   background-repeat: no-repeat;
@@ -198,20 +183,14 @@ body #hero-section {
   /* 상단 컨텐츠 */
 }
 body #hero-section .hero-top-content {
-  padding-top: 60px;
   z-index: 5;
-  position: relative;
 }
 body #hero-section {
   /* 메인 타이틀 */
 }
 body #hero-section .hero-title {
-  font-size: 60px;
-  font-weight: 800;
   color: #212529;
-  line-height: 1.3;
   letter-spacing: -0.05em;
-  margin-bottom: 10px;
 }
 body #hero-section .hero-highlight-text {
   color: var(--color-primary);
@@ -219,15 +198,10 @@ body #hero-section .hero-highlight-text {
 body #hero-section {
   /* 버튼 */
 }
-body #hero-section .hero-btn-wrap {
-  margin-bottom: 16px;
-}
 body #hero-section .hero-btn-wrap .btn {
   width: 210px;
   height: 58px;
   padding: 0;
-  font-size: 25px;
-  font-weight: 600;
   transition: all 0.2s ease-in-out;
 }
 body #hero-section .hero-btn-wrap .btn:hover {
@@ -247,10 +221,6 @@ body #hero-section .hero-btn-wrap .btn-outline:hover {
 body #hero-section {
   /* 태그 */
 }
-body #hero-section .hero-tag-wrap {
-  font-size: 13px;
-  font-weight: 400;
-}
 body #hero-section .hero-tag {
   color: #656565;
   background-color: rgba(114, 159, 255, 0.2);
@@ -263,15 +233,9 @@ body #hero-section {
   /* 캐릭터 */
 }
 body #hero-section .hero-character-wrapper {
-  top: 260px;
-  max-width: 810px;
-  width: 100%;
-  z-index: 2;
+  width: clamp(280px, 80vw, 750px);
 }
-body #hero-section .hero-character-img {
-  width: 100%;
-  height: auto;
-  display: block;
+body #hero-section .hero-character-wrapper .hero-character-img {
   animation: heroSlideUp 1.2s ease-out forwards;
 }
 body {
@@ -293,9 +257,6 @@ body {
      ========================================================================== */
 }
 @media (max-width: 1399.98px) {
-  body #hero-section {
-    height: 760px;
-  }
   body #hero-section .hero-title {
     font-size: 52px;
   }
@@ -310,9 +271,6 @@ body {
   }
 }
 @media (max-width: 1199.98px) {
-  body #hero-section {
-    height: 700px;
-  }
   body #hero-section .hero-title {
     font-size: 44px;
   }
@@ -332,12 +290,7 @@ body {
 }
 @media (max-width: 991.98px) {
   body #hero-section {
-    height: 620px;
-    margin-top: 110px;
     background-position: center center;
-  }
-  body #hero-section .hero-top-content {
-    padding-top: 40px;
   }
   body #hero-section .hero-title {
     font-size: 36px;
@@ -806,7 +759,6 @@ body {
   ========================= */
 }
 body #quick {
-  position: fixed;
   top: 60%;
   right: 50px;
   transform: translateY(-50%);
@@ -821,36 +773,20 @@ body #quick {
 }
 body #quick .quick-bar {
   width: 64px;
-  height: 400px;
   padding: 8px 0;
   border-radius: 32px;
   background-color: #7CAAFE;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 }
 body #quick {
   /* 퀵 아이템 */
 }
 body #quick .quick-item {
-  width: 100%;
-  height: 45px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
 body #quick .quick-item img {
   width: 24px;
-  height: 24px;
-  margin-bottom: 4px;
-  object-fit: contain;
 }
 body #quick .quick-item:hover {
   opacity: 0.7;
@@ -863,11 +799,11 @@ body #quick .quick-item:not(:last-child) {
 }
 body #quick .quick-item:not(:last-child)::after {
   content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 15%;
-  width: 70%;
-  height: 1px;
+  display: block;
+  height: 0.5px;
+  margin: 5px 0;
+  width: 40%;
+  height: 0.5px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 body #quick {
