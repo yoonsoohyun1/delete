@@ -1,11 +1,32 @@
 /* ==========================================================================
    상단배너
    ========================================================================== */
-
+body{
+    &.darkmode{
+        #hd{
+            background-color: #212529 !important;
+            a{ color: white }
+            .logo{
+                .lightlogo{
+                    display: none;
+                }
+                .darklogo{
+                    display: block;
+                }
+            }
+        }
+    }
+    
 #hd {
     transition:
         background-color 0.3s ease,
         box-shadow 0.3s ease;
+        .lightlogo{
+                    display: block;
+        }
+        .darklogo{
+            display: none;
+        }
 
     /* 스크롤시 */
     &.bg-white {
@@ -1365,4 +1386,5 @@
 
         transform: none;
     }
+}
 }
